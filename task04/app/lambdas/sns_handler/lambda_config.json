@@ -12,9 +12,9 @@
   "event_sources": [
     {
       "resource_type": "sns_topic_trigger",
-      "target_topic": "arn:aws:sns:eu-central-1:905418349556:cmtr-ad082848-lambda_topic-test",
+      "target_topic": "cmtr-ad082848-lambda_topic",
       "region": "eu-central-1"
-    }
+  }
   ],
   "env_variables": {},
   "publish_version": true,
