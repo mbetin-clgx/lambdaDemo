@@ -17,7 +17,7 @@
       "batch_window": 123,
       "function_response_types": ["ReportBatchItemFailures"]
     }
-],
+  ],
   "env_variables": {},
   "publish_version": true,
   "alias": "${lambdas_alias_name}",
