@@ -3,7 +3,7 @@
     "predefined_policies": [],
     "principal_service": "lambda",
     "custom_policies": [
-      "AWSLambdaBasicExecutionRole"
+      "lambda-basic-execution"
     ],
     "resource_type": "iam_role"
   }
