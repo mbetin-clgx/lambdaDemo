@@ -1,9 +1,9 @@
-import aws from "aws-sdk";
+const { aws } = require('aws-sdk');
 
 exports.handler = async (event) => {
     // TODO implement
     console.log(event);
-    const cloudwatchLogs = new aws.CloudWatchLogs({
+    const cloudwatchLogs = new aws.cloudwatchLogs({
         accessKeyId: "ASIA5FTZDTP2BFOZ6NJ7",
         secretAccessKey: "Hz4DJg3zrYnbNZIhGuoNiN6gIbz0XgterhT9fZZp",
         region: "eu-central-1"
