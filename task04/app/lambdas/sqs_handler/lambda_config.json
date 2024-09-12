@@ -1,5 +1,4 @@
 {
-  "version": "1.0",
   "name": "sqs_handler",
   "func_name": "lambdas/sqs_handler/index.handler",
   "resource_type": "lambda",
@@ -19,8 +18,6 @@
     }
   ],
   "env_variables": {},
-  "publish_version": true,
-  "alias": "${lambdas_alias_name}",
   "url_config": {},
   "ephemeral_storage": 512
 }
