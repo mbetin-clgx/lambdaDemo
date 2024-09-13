@@ -3,8 +3,7 @@
 
 exports.handler = async (event) => {
     // TODO implement
-    console.log("test");
-    console.log(event);
+    console.log(JSON.stringify(event));
 
     // const cloudwatchLogs = new CloudWatchLogs({
     //     credentials: {
