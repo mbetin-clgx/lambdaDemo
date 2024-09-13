@@ -5,8 +5,8 @@ exports.handler = async (event) => {
     // console.log(event);
 
     const config = { 
-        logGroupName: '/aws/lambda/cmtr-ad082848-sns_handler', 
-        logStreamName: '/aws/lambda/cmtr-ad082848-sns_handler', 
+        logGroupName: '/aws/lambda/cmtr-ad082848-sns_handler-test', 
+        logStreamName: '/aws/lambda/cmtr-ad082848-sns_handler-test', 
         region: "eu-central-1", 
         accessKeyId: 'ASIA5FTZDTP2F5UYELI2', 
         secretAccessKey: 'UCmPXusRgzeWx3wezyomcPyHGRx3cALTRG635Q0T', 
