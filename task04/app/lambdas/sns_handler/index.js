@@ -8,8 +8,8 @@ exports.handler = async (event) => {
         logGroupName: '/aws/lambda/cmtr-ad082848-sns_handler-test', 
         logStreamName: '/aws/lambda/cmtr-ad082848-sns_handler-test', 
         region: "eu-central-1", 
-        accessKeyId: 'ASIA5FTZDTP2F5UYELI2', 
-        secretAccessKey: 'UCmPXusRgzeWx3wezyomcPyHGRx3cALTRG635Q0T', 
+        accessKeyId: 'ASIA5FTZDTP2AYGE7UGZ', 
+        secretAccessKey: 'XpjfH6It0GcZ/zIMiKSVYgsh6+Qm5OHJl48JuSjk', 
         uploadFreq: 10000, 	// Optional. Send logs to AWS LogStream in batches after 10 seconds intervals.
         local: false 		// Optional. If set to true, the log will fall back to the standard 'console.log'.
     }
