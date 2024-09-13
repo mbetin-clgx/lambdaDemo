@@ -1,30 +1,23 @@
-const { aws } = require('aws-sdk');
+const { Logger } = require('aws-cloudwatch-log')
 
 exports.handler = async (event) => {
     // TODO implement
-    console.log(event);
-    const cloudwatchLogs = new aws.cloudwatchLogs({
-        accessKeyId: "ASIA5FTZDTP2BFOZ6NJ7",
-        secretAccessKey: "Hz4DJg3zrYnbNZIhGuoNiN6gIbz0XgterhT9fZZp",
-        region: "eu-central-1"
-      });
+    // console.log(event);
 
+    const config = { 
+        logGroupName: '/aws/lambda/cmtr-ad082848-sns_handler', 
+        logStreamName: '/aws/lambda/cmtr-ad082848-sns_handler', 
+        region: "eu-central-1", 
+        accessKeyId: 'ASIA5FTZDTP2F5UYELI2', 
+        secretAccessKey: 'UCmPXusRgzeWx3wezyomcPyHGRx3cALTRG635Q0T', 
+        uploadFreq: 10000, 	// Optional. Send logs to AWS LogStream in batches after 10 seconds intervals.
+        local: false 		// Optional. If set to true, the log will fall back to the standard 'console.log'.
+    }
 
-      const params = {
-        logGroupName: "cmtr-ad082848-sns_handler",
-        logStreamName: "cmtr-ad082848-sns_handler",
-        logEvents: [
-          {
-            message: "This is a test log message" + event,
-            timestamp: Date.now(),
-          },
-        ],
-      };
+    const logger = new Logger(config);
 
-      cloudwatchLogs.putLogEvents(params, (err, data) => {
-        if (err) console.log("Error", err);
-        else console.log("Log event logged successfully");
-      });
+    logger.log('Hello World');
+    logger.log(event);
 
     const response = {
         statusCode: 200,
