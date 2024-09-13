@@ -1,27 +1,41 @@
-const { Logger } = require('aws-cloudwatch-log')
+const { CloudWatchLogsClient, CloudWatchLogs} = require("@aws-sdk/client-cloudwatch-logs");
+
 
 exports.handler = async (event) => {
     // TODO implement
     // console.log(event);
 
-    const config = { 
-        logGroupName: '/aws/lambda/cmtr-ad082848-sns_handler-test', 
-        logStreamName: '/aws/lambda/cmtr-ad082848-sns_handler-test', 
-        region: "eu-central-1", 
-        accessKeyId: 'ASIA5FTZDTP2AYGE7UGZ', 
-        secretAccessKey: 'XpjfH6It0GcZ/zIMiKSVYgsh6+Qm5OHJl48JuSjk', 
-        uploadFreq: 10000, 	// Optional. Send logs to AWS LogStream in batches after 10 seconds intervals.
-        local: false 		// Optional. If set to true, the log will fall back to the standard 'console.log'.
-    }
+    const cloudwatchLogs = new CloudWatchLogs({
+        credentials: {
+            secretAccessKey: "4PC/QhHkJON2wl0Defxcbc00IPYfSNCLag5+oEKZ", 
+            accessKeyId: "ASIA5FTZDTP2HW2UUDC3"
+        },
+        region: "eu-central-1"}
+    );
 
-    const logger = new Logger(config);
+    // const logStreamParams = {
+    //     logGroupName: "/aws/lambda/cmtr-ad082848-sns_handler",
+    //     logStreamName: "MyLogStream",
+    //   };
+      
+    //   cloudwatchLogs.createLogStream(logStreamParams, (err, data) => {
+    //     if (err) console.log("Error", err);
+    //     else console.log("Log stream created successfully");
+    //   });
 
-    logger.log('Hello World');
-    logger.log(event);
+    const params = {
+        logGroupName: "/aws/lambda/cmtr-ad082848-sns_handler",
+        // logStreamName: "MyLogStream",
+        logEvents: [
+          {
+            message: "This is a test log message" + event,
+            timestamp: Date.now(),
+          },
+        ],
+      };
 
-    const response = {
-        statusCode: 200,
-        body: JSON.stringify('Hello from Lambda!'),
-    };
-    return response;
+    cloudwatchLogs.putLogEvents(params, (err, data) => {
+        if (err) console.log("Error", err);
+        else console.log("Log event logged successfully");
+      });
 };

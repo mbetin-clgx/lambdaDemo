@@ -7,6 +7,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "aws-cloudwatch-log": "^0.1.6"
+    "@aws-sdk/client-cloudwatch-logs": "^3.650.0"
   }
 }
