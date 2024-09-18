@@ -6,5 +6,7 @@
   "scripts": {},
   "author": "",
   "license": "ISC",
-  "dependencies": {}
+  "dependencies": {
+    "@aws-sdk/client-cloudwatch-logs": "^3.650.0"
+  }
 }
