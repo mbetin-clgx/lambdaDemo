@@ -18,7 +18,7 @@ exports.handler = async (event) => {
     // let requestJSON = JSON.parse(event);
     // console.log(requestJSON);
     
-    await dynamo.send(
+    const createdEvent  = await dynamo.send(
       new PutCommand({
         TableName: tableName,
         Item: {
@@ -33,7 +33,7 @@ exports.handler = async (event) => {
 
     const response = {
         statusCode: 201,
-        body: JSON.stringify(event),
+        body: JSON.stringify(createdEvent),
     };
 
     return response;
