@@ -22,7 +22,7 @@ exports.handler = async (event) => {
       new PutCommand({
         TableName: tableName,
         Item: {
-          Id: randomUUID(),
+          id: randomUUID(),
           principalId: event.principalId,
           body: event.content,
         },
