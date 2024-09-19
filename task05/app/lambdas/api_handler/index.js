@@ -24,6 +24,7 @@ exports.handler = async (event) => {
         Item: {
           id: randomUUID(),
           principalId: event.principalId,
+          createdAt: new Date(),
           body: event.content,
         },
       })
@@ -35,6 +36,8 @@ exports.handler = async (event) => {
         statusCode: 201,
         body: JSON.stringify(createdEvent),
     };
+
+    console.log(response);
 
     return response;
 };
