@@ -24,7 +24,7 @@ exports.handler = async (event) => {
         Item: {
           id: randomUUID(),
           principalId: event.principalId,
-          createdAt: new Date(),
+          createdAt: new Date().toISOString(),
           body: event.content,
         },
       })
