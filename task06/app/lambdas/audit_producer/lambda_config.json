@@ -12,7 +12,7 @@
   "event_sources": [
     {
       "resource_type": "dynamodb_trigger",
-      "target_table": "cmtr-ad082848-Configuration",
+      "target_table": "cmtr-ad082848-Configuration-test",
       "batch_size": 123,
       "function_response_types": ["ReportBatchItemFailures"]
     }
