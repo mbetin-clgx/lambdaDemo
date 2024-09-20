@@ -31,8 +31,8 @@ exports.handler = async (event) => {
             itemKey: key,
             modificationTime: modificationTime,
             updatedAttribute: 'value',
-            oldValue: event.Records[0].dynamodb.OldImage.value.N,
-            newValue: event.Records[0].dynamodb.NewImage.value.N
+            oldValue: { N: event.Records[0].dynamodb.OldImage.value.N },
+            newValue: { N: event.Records[0].dynamodb.NewImage.value.N }
           },
         })
         );
@@ -46,7 +46,7 @@ exports.handler = async (event) => {
             id: randomUUID(),
             itemKey: event.Records[0].dynamodb.NewImage.key.S,
             modificationTime: modificationTime,
-            newValue: { "key": key, "value": value} 
+            newValue: { key: { S: key }, value: { N: value}} 
           },
         })
         );
