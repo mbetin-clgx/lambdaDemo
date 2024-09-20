@@ -4,7 +4,13 @@ exports.handler = async (event) => {
     console.log(JSON.stringify(event));
 
     console.log(event.Records);
-    console.log(event.Records[0]);
-    console.log(event.Records[0].body);
+
+    const records = event.Records;
+    records.forEach(record => {
+
+        console.log(record);
+        console.log(record.body);
+        
+    });
 
 };
