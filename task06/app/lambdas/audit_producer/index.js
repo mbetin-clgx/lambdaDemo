@@ -10,8 +10,7 @@ const client = new DynamoDBClient({});
 
 const dynamo = DynamoDBDocumentClient.from(client);
 
-const auditTableName = "cmtr-ad082848-Audit";
-const configTableName = "cmtr-ad082848-Configuration";
+const auditTableName = "cmtr-ad082848-Audit-test";
 
 exports.handler = async (event) => {
     // TODO implement
