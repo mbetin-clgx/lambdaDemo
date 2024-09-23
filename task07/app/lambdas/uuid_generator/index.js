@@ -19,11 +19,19 @@ exports.handler = async (event) => {
       }
     const filename = executionTime;
     console.log(uuids);
+    console.log("JOIN " + uuids.join(","));
     
+    const body = Buffer.from(uuids);
+
+    console.log(body)
+    
+    const body2 = ' {ids: ' + uuids + '}';
+    console.log(body2);
+
     const params = {
         Bucket: "cmtr-ad082848-uuid-storage-test",
         Key: filename,
-        Body: eval({"ids": uuids.join(",")})
+        Body: body2
     };
 
     console.log(params);
