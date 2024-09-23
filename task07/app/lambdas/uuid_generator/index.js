@@ -17,7 +17,7 @@ exports.handler = async (event) => {
         const uuid = randomUUID.toString();
         uuids.push(uuid);
       }
-    const filename = executionTime + "-Test.txt";
+    const filename = executionTime;
     
     const params = {
         Bucket: "cmtr-ad082848-uuid-storage-test",
