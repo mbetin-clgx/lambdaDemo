@@ -20,7 +20,7 @@ exports.handler = async (event) => {
     const filename = executionTime + "-Test.txt";
     
     const params = {
-        Bucket: "cmtr-ad082848-uuid-storage",
+        Bucket: "cmtr-ad082848-uuid-storage-test",
         Key: filename,
         Body: Buffer.from(uuids)
     };
