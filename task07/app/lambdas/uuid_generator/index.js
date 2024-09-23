@@ -14,15 +14,16 @@ exports.handler = async (event) => {
     const uuids = [];
 
     for (let i = 0; i < 10; i++) {
-        const uuid = randomUUID.toString();
+        const uuid = randomUUID().toString();
         uuids.push(uuid);
       }
     const filename = executionTime;
+    console.log(uuids);
     
     const params = {
         Bucket: "cmtr-ad082848-uuid-storage-test",
         Key: filename,
-        Body: Buffer.from(uuids)
+        Body: JSON.stringify({ids: uuids.toString()})
     };
 
     console.log(params);
