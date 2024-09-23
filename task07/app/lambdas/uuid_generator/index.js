@@ -23,7 +23,7 @@ exports.handler = async (event) => {
     const params = {
         Bucket: "cmtr-ad082848-uuid-storage-test",
         Key: filename,
-        Body: JSON.stringify({"ids": uuids.join(",")})
+        Body: eval({"ids": uuids.join(",")})
     };
 
     console.log(params);
