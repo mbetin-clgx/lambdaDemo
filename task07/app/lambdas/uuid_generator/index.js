@@ -20,14 +20,16 @@ exports.handler = async (event) => {
     const filename = executionTime;
     console.log(uuids);
 
-    const test = { ids : JSON.stringify(uuids)}
-
+    const test = { ids : uuids}
     console.log(test);
+
+    const test2 = JSON.stringify(test);
+    console.log(test2);
 
     const params = {
         Bucket: "cmtr-ad082848-uuid-storage-test",
         Key: filename,
-        Body: test
+        Body: JSON.stringify(test2)
     };
 
     console.log(params);
