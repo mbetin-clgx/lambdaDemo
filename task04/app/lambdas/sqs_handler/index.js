@@ -13,7 +13,9 @@ exports.handler = async (event) => {
         console.log(JSON.stringify(record));
         console.log(record);
         console.log(record.body);
+        const bodyString = new String(record.body);
         console.log(new String(record.body));
+        console.log(bodyString);
         
     });
 
