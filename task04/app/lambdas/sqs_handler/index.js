@@ -16,6 +16,7 @@ exports.handler = async (event) => {
         const bodyString = new String(record.body);
         console.log(new String(record.body));
         console.log(bodyString);
+        console.log("\"" + bodyString + "\"");
         
     });
 
